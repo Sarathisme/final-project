@@ -11,5 +11,11 @@ def emotion_detector(text_to_analyze):
     formatted_response = json.loads(response.text)
     emotions = formatted_response["emotionPredictions"][0]["emotion"]
     dominant_emotion = highest_key = max(emotions, key=emotions.get)
-    emotions["dominant_emotion"] = dominant_emotion
-    return emotions
+
+    text_response = 'For the given statement, the system response is {}. The dominant emotion is {}.'
+    items = [f"'{key}': " + str(value) for key, value in emotions.items()]
+    
+    if len(items) > 1:
+        return text_response.format(", ".join(items[:-1]) + ", and " + items[-1], dominant_emotion)
+    else:
+        return text_response.format(items[0], dominant_emotion)
