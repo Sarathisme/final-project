@@ -1,0 +1,7 @@
+Script started on 2026-06-29 21:11:16-04:00 [TERM="xterm-color" TTY="/dev/pts/1" COLUMNS="79" LINES="20"]
+theia@theiadocker-sarathsattir:/home/project/final-project/EmotionDetection$ py thon3 test_emotion_detection.py 
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.667s
+
+OK
