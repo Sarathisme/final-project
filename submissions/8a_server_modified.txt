@@ -1,0 +1,11 @@
+theia@theiadocker-sarathsattir:/home/project/final-project$ pylint server.py
+************* Module server
+server.py:12:0: C0301: Line too long (101/100) (line-too-long)
+server.py:31:0: C0305: Trailing newlines (trailing-newlines)
+server.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+server.py:7:0: C0116: Missing function or method docstring (missing-function-docstring)
+server.py:8:4: C0103: Variable name "textToAnalyze" doesn't conform to snake_case naming style (invalid-name)
+server.py:26:0: C0116: Missing function or method docstring (missing-function-docstring)
+
+-----------------------------------
+Your code has been rated at 6.84/10

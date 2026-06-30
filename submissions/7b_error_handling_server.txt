@@ -1,0 +1,18 @@
+@app.route("/emotionDetector")
+def detect_emotion():
+    textToAnalyze = request.args.get("textToAnalyze")
+    emotions = emotion_detection.emotion_detector(textToAnalyze)
+    if emotions['dominant_emotion'] is None:
+        return "Invalid text! Please try again!"
+    text_response = 'For the given statement, the system response is {}. The dominant emotion is {}.'
+
+    emotion_scores = {
+        key: value for key, value in emotions.items()
+        if key != "dominant_emotion"
+    }
+    items = [f"'{key}': {value}" for key, value in emotion_scores.items()]
+    if len(items) > 1:
+        response = ", ".join(items[:-1]) + ", and " + items[-1]
+    else:
+        response = items[0]
+    return text_response.format(response, emotions['dominant_emotion'])
